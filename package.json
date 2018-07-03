@@ -8,11 +8,11 @@
     "build": "next build",
     "start": "next start"
   },
-  "author": "",
+  "author": "Ilya Daraseliya",
   "license": "ISC",
   "dependencies": {
     "next": "^6.0.3",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   }
 }
