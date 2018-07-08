@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "firstName": "Ilya",
+      "lastName": "Daraseliya",
+      "twitterHandle": "ilya_js"
+    },
+    {
+      "firstName": "Roy",
+      "lastName": "Derks",
+      "twitterHandle": "gethackteam"
+    },
+    {
+      "firstName": "Dorian",
+      "lastName": "Amouroux",
+      "twitterHandle": "dorianamouroux"
+    }
+  ]
+}
