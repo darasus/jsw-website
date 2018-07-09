@@ -5,4 +5,5 @@ export const GREY = '#ABB2BF';
 export const GREEN = '#98C379';
 export const DARK_BLUE = '#292d35';
 
-export const TWITTER_COLOR = '#1DA1F2';
+export const WHITE = '#FFFFFF';
+export const TWITTER = '#1DA1F2';

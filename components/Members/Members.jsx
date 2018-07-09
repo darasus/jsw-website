@@ -1,23 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { RED, TWITTER_COLOR } from '../../contants/colors';
+import { RED, TWITTER } from '../../contants/colors';
+import { SectionStyled, SectionTitleStyled } from '../../styles/styles';
 
-const SectionStyled = styled.section`
-  min-height: calc(100vh / 2);
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
 const MembersContainerStyled = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 `;
-const MembersTitleStyled = styled.h2``;
 const MemberStyled = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,7 +21,7 @@ const MemberImageStyled = styled.div`
   height: 100px;
   width: 100px;
   border-radius: 50%;
-  background-image: url(${(props) => props.image});
+  background-image: url(${({ image }) => image});
   background-size: cover;
   background-position: center;
   border: 3px solid ${RED};
@@ -40,7 +32,7 @@ const MemberNameStyled = styled.span`
   font-weight: 500;
 `;
 const MemberTwitterStyled = styled.a`
-  color: ${TWITTER_COLOR};
+  color: ${TWITTER};
   text-decoration: none;
 `;
 
@@ -49,6 +41,7 @@ class Members extends React.Component {
     loading: true,
     members: [],
   };
+
   componentDidMount = async () => {
     const fetchedMembers = await fetch('/static/data/members.json');
     const members = await fetchedMembers.json();
@@ -57,28 +50,38 @@ class Members extends React.Component {
       loading: false,
     });
   };
+
   render = () => {
     const { loading, members } = this.state;
     return (
       <SectionStyled>
-        <MembersTitleStyled>Members</MembersTitleStyled>
+        <SectionTitleStyled>
+          {'Members'}
+        </SectionTitleStyled>
         {(() => {
           if (loading) {
-            return <span>Loading...</span>;
+            return (
+              <span>
+                {'Loading...'}
+              </span>
+            );
           }
           return (
             <MembersContainerStyled>
-              {members.map(({ firstName, lastName, twitterHandle }, i) => (
-                <MemberStyled key={i}>
-                  <MemberImageStyled
-                    image={`/static/img/${firstName.toLowerCase()}.jpg`}
-                  />
+              {members.map(({ firstName, lastName, twitterHandle }) => (
+                <MemberStyled key={lastName}>
+                  <MemberImageStyled image={`/static/img/${firstName.toLowerCase()}.jpg`} />
                   <MemberNameStyled>
-                    {firstName} {lastName}
+                    {firstName}
+                    {' '}
+                    {lastName}
                   </MemberNameStyled>
                   <MemberTwitterStyled
                     href={`https://twitter.com/${twitterHandle}`}
-                    target="_blank">{`@${twitterHandle}`}</MemberTwitterStyled>
+                    target="_blank"
+                  >
+                    {`@${twitterHandle}`}
+                  </MemberTwitterStyled>
                 </MemberStyled>
               ))}
             </MembersContainerStyled>
