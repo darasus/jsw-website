@@ -53,7 +53,7 @@ const Intro = () => (
 js
         </span>
         <span style={{ color: RED }}>
-          {'w'}
+w
         </span>
         {' '}
         <span style={{ color: GREY }}>

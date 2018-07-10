@@ -20,6 +20,9 @@ const EventStyled = styled.div`
 const EventNameStyled = styled.span`
   font-size: 18px;
   font-weight: 500;
+  span {
+    color: ${GREY};
+  }
 `;
 const EventDescStyled = styled.span`
   color: ${GREY};
@@ -66,13 +69,13 @@ class Events extends React.Component {
     return (
       <SectionStyled>
         <SectionTitleStyled>
-Events
+          {'Events'}
         </SectionTitleStyled>
         {(() => {
           if (loading) {
             return (
               <span>
-Loading...
+                {'Loading...'}
               </span>
             );
           }
@@ -95,7 +98,9 @@ Loading...
                   </EventSpeakerStyled>
                   <EventNameStyled>
                     {eventName}
-                    {eventDate}
+                    <span>
+                      {` • ${eventDate}`}
+                    </span>
                   </EventNameStyled>
                   <EventDescStyled>
                     {eventDesc}
