@@ -5,6 +5,7 @@ import { injectGlobal } from 'styled-components';
 import Intro from '../components/Intro/Intro';
 import Members from '../components/Members/Members';
 import Events from '../components/Events/Events';
+import Subscribe from '../components/Subscribe/Subscribe';
 
 injectGlobal`
   body {
@@ -28,6 +29,7 @@ const Index = () => (
     <Intro />
     <Members />
     <Events />
+    <Subscribe />
   </Fragment>
 );
 

@@ -1,21 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import { GREY, RED, TWITTER } from '../../contants/colors';
-import { SectionStyled, SectionTitleStyled } from '../../styles/styles';
+import { SectionStyled, SectionTitleStyled, ContainerStyled } from '../../styles/styles';
 
-const EventsContainerStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 800px;
-`;
 const EventStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  margin-bottom: 30px;
+  margin: ${({ isFirst }) => (isFirst ? '0 0 20px 0' : '20px 0')};
 `;
 const EventNameStyled = styled.span`
   font-size: 18px;
@@ -47,6 +40,13 @@ const EventSpeakerNameStyled = styled.span`
 `;
 const EventSpeakerTwitterStyled = styled.span`
   color: ${TWITTER};
+`;
+const DividerStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: ${GREY};
 `;
 
 class Events extends React.Component {
@@ -80,34 +80,41 @@ class Events extends React.Component {
             );
           }
           return (
-            <EventsContainerStyled>
+            <ContainerStyled>
               {events.map(({
                 eventName, eventDesc, eventDate, speaker,
-              }) => (
-                <EventStyled key={eventName}>
-                  <EventSpeakerStyled>
-                    <EventSpeakerImageStyled
-                      image={`/static/img/${speaker.firstName.toLowerCase()}.jpg`}
-                    />
-                    <EventSpeakerNameStyled>
-                      {`${speaker.firstName} ${speaker.lastName}`}
-                    </EventSpeakerNameStyled>
-                    <EventSpeakerTwitterStyled>
-                      {`@${speaker.twitterHandle}`}
-                    </EventSpeakerTwitterStyled>
-                  </EventSpeakerStyled>
-                  <EventNameStyled>
-                    {eventName}
-                    <span>
-                      {` • ${eventDate}`}
-                    </span>
-                  </EventNameStyled>
-                  <EventDescStyled>
-                    {eventDesc}
-                  </EventDescStyled>
-                </EventStyled>
+              }, i) => (
+                <div key={eventName}>
+                  <EventStyled isFirst={i === 0}>
+                    <EventSpeakerStyled>
+                      <EventSpeakerImageStyled
+                        image={`/static/img/${speaker.firstName.toLowerCase()}.jpg`}
+                      />
+                      <EventSpeakerNameStyled>
+                        {`${speaker.firstName} ${speaker.lastName}`}
+                      </EventSpeakerNameStyled>
+                      <EventSpeakerTwitterStyled>
+                        {`@${speaker.twitterHandle}`}
+                      </EventSpeakerTwitterStyled>
+                    </EventSpeakerStyled>
+                    <EventNameStyled>
+                      {eventName}
+                      <span>
+                        {` • ${eventDate}`}
+                      </span>
+                    </EventNameStyled>
+                    <EventDescStyled>
+                      {eventDesc}
+                    </EventDescStyled>
+                  </EventStyled>
+                  {events.length - 1 === i ? null : (
+                    <DividerStyled>
+                      {'•'}
+                    </DividerStyled>
+                  )}
+                </div>
               ))}
-            </EventsContainerStyled>
+            </ContainerStyled>
           );
         })()}
       </SectionStyled>

@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "name": "Meetup",
+      "color": "#ED1C40",
+      "link": "https://www.meetup.com/javascript-workshops-amsterdam/"
+    },
+    {
+      "name": "Slack",
+      "color": "#56B68B",
+      "link": "https://bit.ly/2xf9Vfc"
+    }
+  ]
+}
