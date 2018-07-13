@@ -60,7 +60,7 @@ class Subscribe extends React.Component {
     return (
       <SectionStyled>
         <SectionTitleStyled>
-          {'Follow us'}
+          {'Get in touch'}
         </SectionTitleStyled>
         <SubscribeContainerStyled>
           {channels.map(({ name, color, link }) => (

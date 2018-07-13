@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import {
   PURPLE, YELLOW, RED, GREY, GREEN,
-} from '../../contants/colors';
+} from '../../constants/colors';
 
 const IntroStyled = styled.div`
   position: relative;

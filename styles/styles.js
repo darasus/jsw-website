@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { GREY, WHITE } from '../contants/colors';
+import { GREY, WHITE } from '../constants/colors';
 
 export const SectionStyled = styled.section`
   padding-top: 80px;

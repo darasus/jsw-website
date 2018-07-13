@@ -6,6 +6,7 @@ import Intro from '../components/Intro/Intro';
 import Members from '../components/Members/Members';
 import Events from '../components/Events/Events';
 import Subscribe from '../components/Subscribe/Subscribe';
+import Footer from '../components/Footer/Footer';
 
 injectGlobal`
   body {
@@ -30,6 +31,7 @@ const Index = () => (
     <Members />
     <Events />
     <Subscribe />
+    <Footer />
   </Fragment>
 );
 

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
-import { GREY, RED, TWITTER } from '../../contants/colors';
+import { GREY, RED, TWITTER } from '../../constants/colors';
 import { SectionStyled, SectionTitleStyled, ContainerStyled } from '../../styles/styles';
 
 const EventStyled = styled.div`

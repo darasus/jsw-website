@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { RED, TWITTER } from '../../contants/colors';
+import { RED, TWITTER } from '../../constants/colors';
 import { SectionStyled, SectionTitleStyled } from '../../styles/styles';
 
 const MembersContainerStyled = styled.div`
