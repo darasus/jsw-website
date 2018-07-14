@@ -22,7 +22,13 @@ const CopyStyled = styled.div`
   color: ${GREY};
 `;
 const GithubLinkStyled = styled.a`
+  display: flex;
   color: ${GREY};
+  img {
+    display: block;
+    height: 20px;
+    margin: 0 5px
+  }
 `;
 
 const Footer = () => (
@@ -32,7 +38,9 @@ const Footer = () => (
         {`${new Date().getFullYear()} © JSW`}
       </CopyStyled>
       <GithubLinkStyled href="https://github.com/daraselia/jsw-website" target="_blank">
-        {'Opensourced on GitHub'}
+        {'Open-sourced on '}
+        <img src="/static/img/github.svg" alt="github" />
+        {' GitHub'}
       </GithubLinkStyled>
     </FooterContainerStyled>
   </FooterStyled>

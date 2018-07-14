@@ -24,7 +24,6 @@ injectGlobal`
     background-color: black;
     overflow: hidden;
   }
-
   .column {
     position: absolute;
     width: 30%;
@@ -33,7 +32,6 @@ injectGlobal`
     bottom: 0;
     cursor: pointer;
     transition: opacity 200ms ease;
-    opacity: 0;
     background: transparent;
     border: none;
   }
@@ -46,7 +44,6 @@ injectGlobal`
   .rightColumn {
     right: 0;
   }
-
   .arrowButtonReturn {
     height: 48px;
     width: 48px;
@@ -61,7 +58,6 @@ injectGlobal`
     opacity: 1;
     z-index: 1000;
   }
-
   .arrowButton {
     background-color: rgba(66, 66, 66, 0.54);
     border-radius: 28px;
@@ -85,7 +81,6 @@ injectGlobal`
   .arrowButtonRight {
     right: 28px;
   }
-
   .image {
     position: absolute;
     visibility: hidden;
