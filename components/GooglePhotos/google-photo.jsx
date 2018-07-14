@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Portal from 'react-minimalist-portal';
 import Transition from 'react-transition-group/Transition';
 import noScroll from 'no-scroll';
-import screenfull from 'screenfull';
 import { CloseArrow, PrevArrowButton, NextArrowButton } from './arrow';
 
 const keycodes = {
@@ -49,22 +48,16 @@ class GooglePhoto extends Component {
   }
 
   handleOpen = () => {
-    const { fullscreen } = this.props;
     document.addEventListener('keydown', this.handleKeydown);
     window.addEventListener('resize', this.handleWindowResize);
     document.querySelector('*').addEventListener('mousemove', this.handleMousemove);
     noScroll.on();
-    if (fullscreen && screenfull.enabled) {
-      screenfull.request();
-      screenfull.on('change', this.handleScreenfullChange);
-    }
   };
 
   handleClose = () => {
     document.removeEventListener('keydown', this.handleKeydown);
     window.removeEventListener('resize', this.handleWindowResize);
     document.querySelector('*').removeEventListener('mousemove', this.handleMousemove);
-    screenfull.off('change', this.handleScreenfullChange);
     noScroll.off();
   };
 
@@ -95,13 +88,6 @@ class GooglePhoto extends Component {
     this.timeoutMouseIdle = setTimeout(() => {
       this.setState({ mouseIdle: true });
     }, mouseIdleTimeout);
-  };
-
-  handleScreenfullChange = () => {
-    const { open, onClose } = this.props;
-    if (!screenfull.isFullscreen && open) {
-      onClose();
-    }
   };
 
   handleClickPrev = () => {
@@ -270,10 +256,6 @@ GooglePhoto.propTypes = {
   // eslint-disable-next-line
   transitionStyles: PropTypes.object,
   /**
-   * Should open on fullscreen mode
-   */
-  fullscreen: PropTypes.bool,
-  /**
    * Timeout before hidding the actions buttons when mouse do not move (milliseconds)
    */
   mouseIdleTimeout: PropTypes.number,
@@ -294,7 +276,6 @@ GooglePhoto.propTypes = {
 GooglePhoto.defaultProps = {
   closeOnEsc: true,
   keyboardNavigation: true,
-  fullscreen: false,
   mouseIdleTimeout: 5000,
   transitionDuration: 200,
   transitionStyles: {
