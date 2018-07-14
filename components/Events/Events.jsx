@@ -32,8 +32,10 @@ const EventDescStyled = styled.span`
 const EventSpeakerStyled = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 `;
 const EventSpeakerImageStyled = styled.div`
+  flex-shrink: 0;
   width: 30px;
   height: 30px;
   background-image: url(${({ image }) => image});
@@ -46,6 +48,9 @@ const EventSpeakerImageStyled = styled.div`
 `;
 const EventSpeakerNameStyled = styled.span`
   margin-right: 5px;
+  @media (max-width: 700px) {
+    flex-grow: 1;
+  }
 `;
 const EventSpeakerTwitterStyled = styled.a`
   color: ${TWITTER_COLOR};
@@ -59,6 +64,7 @@ const DividerStyled = styled.div`
 `;
 const LinksStyled = styled.div`
   display: flex;
+  flex-wrap: wrap;
   padding-top: 20px;
 `;
 const LinkStyled = styled.a`
@@ -66,6 +72,7 @@ const LinkStyled = styled.a`
   height: 35px;
   padding: 0 10px;
   margin-right: 10px;
+  margin-bottom: 10px;
   align-items: center;
   color: ${RED};
   background-color: ${LIGHT_GREY};
