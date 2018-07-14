@@ -28,11 +28,14 @@ injectGlobal`
   .column {
     position: absolute;
     width: 30%;
+    height: 100%;
     top: 0;
     bottom: 0;
     cursor: pointer;
     transition: opacity 200ms ease;
     opacity: 0;
+    background: transparent;
+    border: none;
   }
   .column:hover {
     opacity: 1;
@@ -56,6 +59,7 @@ injectGlobal`
     cursor: pointer;
     transition: opacity 200ms ease;
     opacity: 1;
+    z-index: 1000;
   }
 
   .arrowButton {

@@ -4,7 +4,6 @@ import Portal from 'react-minimalist-portal';
 import Transition from 'react-transition-group/Transition';
 import noScroll from 'no-scroll';
 import screenfull from 'screenfull';
-import './styles.css';
 import { CloseArrow, PrevArrowButton, NextArrowButton } from './arrow';
 
 const keycodes = {
