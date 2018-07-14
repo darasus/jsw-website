@@ -7,14 +7,21 @@ import {
 
 const IntroStyled = styled.div`
   position: relative;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background: #282d35;
   overflow: hidden;
+  @media (min-width: 700px) {
+    height: 100vh;
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  @media (max-width: 700px) {
+    height: auto;
+    padding: 100px 20px;
+  }
 `;
 const IntroContentStyled = styled.div`
   width: 80%;
@@ -25,12 +32,18 @@ const IntroTextStyled = styled.div`
   font-size: 24px;
   font-weight: normal;
   margin: 0 0 10px 0;
+  @media (max-width: 700px) {
+    font-size: 18px;
+  }
 `;
 const CommentTextStyled = styled.div`
   font-family: Fira Code, sans-serif;
   font-size: 24px;
   font-weight: normal;
   margin: 0 0 10px 0;
+  @media (max-width: 700px) {
+    font-size: 18px;
+  }
 `;
 const ScrollDownLabel = styled.span`
   position: absolute;
@@ -39,6 +52,9 @@ const ScrollDownLabel = styled.span`
   left: 0;
   color: ${GREY};
   text-align: center;
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const Intro = () => (
@@ -76,7 +92,6 @@ w
       <ScrollDownLabel>
         {'Scroll down'}
       </ScrollDownLabel>
-      <div />
     </IntroContentStyled>
   </IntroStyled>
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { RED, TWITTER } from '../../constants/colors';
+import { RED, TWITTER_COLOR } from '../../constants/colors';
 import { SectionStyled, SectionTitleStyled } from '../../styles/styles';
 
 const MembersContainerStyled = styled.div`
@@ -9,6 +9,9 @@ const MembersContainerStyled = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 const MemberStyled = styled.div`
   display: flex;
@@ -16,6 +19,9 @@ const MemberStyled = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 20px;
+  @media (max-width: 700px) {
+    margin: 0 0 20px 0;
+  }
 `;
 const MemberImageStyled = styled.div`
   height: 100px;
@@ -32,8 +38,7 @@ const MemberNameStyled = styled.span`
   font-weight: 500;
 `;
 const MemberTwitterStyled = styled.a`
-  color: ${TWITTER};
-  text-decoration: none;
+  color: ${TWITTER_COLOR};
 `;
 
 class Members extends React.Component {

@@ -27,5 +27,6 @@ export const ContainerStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80%;
   max-width: 800px;
 `;

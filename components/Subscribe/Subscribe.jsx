@@ -6,12 +6,18 @@ import { SectionStyled, SectionTitleStyled, ContainerStyled } from '../../styles
 const SubscribeContainerStyled = ContainerStyled.extend`
   display: flex;
   flex-direction: row;
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 const ChannelStyled = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 10px;
+  @media (max-width: 700px) {
+    margin: 0 0 20px 0;
+  }
   cursor: pointer;
   text-decoration: none;
   color: inherit;

@@ -12,6 +12,10 @@ const FooterContainerStyled = styled.div`
   display: flex;
   max-width: 800px;
   margin: 0 auto;
+  @media (max-width: 700px) {
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 const CopyStyled = styled.div`
   flex-grow: 1;
