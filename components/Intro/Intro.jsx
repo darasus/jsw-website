@@ -12,7 +12,6 @@ const IntroStyled = styled.div`
   @media (min-width: 700px) {
     height: 100vh;
     width: 100%;
-    padding: 50px 0;
     display: flex;
     justify-content: center;
     align-items: center;
