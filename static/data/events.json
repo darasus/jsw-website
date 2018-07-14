@@ -1,0 +1,137 @@
+{
+  "data": [
+    {
+      "eventName": "New Adventures in Responsive Web Design with Vitaly Friedman",
+      "eventDesc":
+        "Vitaly is the editor-in-chief of Smashing Magazine, he loves beautiful content and doesn’t like to give in easily. When he is not writing or speaking at a conference, he’s most probably running front-end/UX workshops and webinars. He loves solving complex UX, front-end and performance problems...",
+      "eventDate": "21 June 2018",
+      "speaker": {
+        "firstName": "Vitaly",
+        "lastName": "Friedman",
+        "twitterHandle": "smashingmag"
+      },
+      "links": {
+        "meetup": "https://www.meetup.com/javascript-workshops-amsterdam/events/251238018/",
+        "slides": null,
+        "photos": [
+          {
+            "src":
+              "/static/img/events/new-adventures-in-responsive-web-design-with-vitaly-friedman/1.jpg",
+            "width": 2000,
+            "height": 1500
+          },
+          {
+            "src":
+              "/static/img/events/new-adventures-in-responsive-web-design-with-vitaly-friedman/2.jpg",
+            "width": 2000,
+            "height": 1500
+          },
+          {
+            "src":
+              "/static/img/events/new-adventures-in-responsive-web-design-with-vitaly-friedman/3.jpg",
+            "width": 2000,
+            "height": 1500
+          },
+          {
+            "src":
+              "/static/img/events/new-adventures-in-responsive-web-design-with-vitaly-friedman/4.jpg",
+            "width": 2000,
+            "height": 1500
+          },
+          {
+            "src":
+              "/static/img/events/new-adventures-in-responsive-web-design-with-vitaly-friedman/5.jpg",
+            "width": 2000,
+            "height": 1500
+          },
+          {
+            "src":
+              "/static/img/events/new-adventures-in-responsive-web-design-with-vitaly-friedman/6.jpg",
+            "width": 2000,
+            "height": 1500
+          },
+          {
+            "src":
+              "/static/img/events/new-adventures-in-responsive-web-design-with-vitaly-friedman/7.jpg",
+            "width": 2000,
+            "height": 1500
+          },
+          {
+            "src":
+              "/static/img/events/new-adventures-in-responsive-web-design-with-vitaly-friedman/8.jpg",
+            "width": 2000,
+            "height": 1500
+          }
+        ]
+      }
+    },
+    {
+      "eventName": "Intro to Javascript ES6/7/8",
+      "eventDesc":
+        "This workshop offers hands-on exercises on most ECMAScript 2016 (or ES6) features, as well as ES7 and ES8 versions of the specification including features like async functions, etc. With these exercises, you will learn how to take advantage of latest Javascript features, be most productive using them and effectively integrate them into your project...",
+      "eventDate": "11 June 2018",
+      "twitterHandle": "ilya_js",
+      "speaker": {
+        "firstName": "Roy",
+        "lastName": "Derks",
+        "twitterHandle": "gethackteam"
+      },
+      "links": {
+        "meetup": "https://www.meetup.com/javascript-workshops-amsterdam/events/250332957/",
+        "slides": "https://www.slideshare.net/RoyDerks1/workshop-javascript-es6",
+        "photos": [
+          {
+            "src": "/static/img/events/intro-to-javascript-es6-7-8/1.jpg",
+            "width": 2000,
+            "height": 1334
+          },
+          {
+            "src": "/static/img/events/intro-to-javascript-es6-7-8/2.jpg",
+            "width": 2000,
+            "height": 1334
+          },
+          {
+            "src": "/static/img/events/intro-to-javascript-es6-7-8/3.jpg",
+            "width": 2000,
+            "height": 1334
+          },
+          {
+            "src": "/static/img/events/intro-to-javascript-es6-7-8/4.jpg",
+            "width": 2000,
+            "height": 1334
+          },
+          {
+            "src": "/static/img/events/intro-to-javascript-es6-7-8/5.jpg",
+            "width": 2000,
+            "height": 1334
+          },
+          {
+            "src": "/static/img/events/intro-to-javascript-es6-7-8/6.jpg",
+            "width": 2000,
+            "height": 1334
+          },
+          {
+            "src": "/static/img/events/intro-to-javascript-es6-7-8/7.jpg",
+            "width": 2000,
+            "height": 1500
+          },
+          {
+            "src": "/static/img/events/intro-to-javascript-es6-7-8/8.jpg",
+            "width": 2000,
+            "height": 1500
+          },
+          {
+            "src": "/static/img/events/intro-to-javascript-es6-7-8/9.jpg",
+            "width": 2000,
+            "height": 1500
+          },
+          {
+            "src": "/static/img/events/intro-to-javascript-es6-7-8/10.jpg",
+            "width": 2000,
+            "height": 1500
+          }
+        ]
+      }
+    }
+  ]
+}
