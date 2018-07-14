@@ -21,6 +21,7 @@ export const SectionTitleStyled = styled.span`
   font-weight: bold;
   font-size: 40px;
   margin: 0 0 60px;
+  text-align: center;
 `;
 export const ContainerStyled = styled.div`
   display: flex;
