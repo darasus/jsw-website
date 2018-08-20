@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/daraselia/.nvm/versions/node/v9.3.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js remove css-loader
+  /Users/daraselia/.nvm/versions/node/v9.3.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js remmove yarn
 
 PATH: 
   /Users/daraselia/.rvm/gems/ruby-2.2.4/bin:/Users/daraselia/.rvm/gems/ruby-2.2.4@global/bin:/Users/daraselia/.rvm/rubies/ruby-2.2.4/bin:/Users/daraselia/.nvm/versions/node/v9.3.0/bin:/Users/daraselia/Library/Android/sdk/tools:/Users/daraselia/Library/Android/sdk/platform-tools:/Users/daraselia/Downloads/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/daraselia/.rvm/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
@@ -28,8 +28,6 @@ npm manifest:
     "license": "ISC",
     "dependencies": {
       "add": "^2.0.6",
-      "babel-eslint": "^8.2.5",
-      "classnames": "^2.2.6",
       "next": "^6.1.1",
       "no-scroll": "^2.1.1",
       "postcss-loader": "^2.1.6",
@@ -38,7 +36,6 @@ npm manifest:
       "react-dom": "^16.4.1",
       "react-minimalist-portal": "^2.3.1",
       "react-transition-group": "^2.4.0",
-      "style-loader": "^0.21.0",
       "styled-components": "^3.3.3",
       "yarn": "^1.7.0"
     },
@@ -47,7 +44,8 @@ npm manifest:
       "eslint-config-airbnb": "^17.0.0",
       "eslint-plugin-import": "^2.13.0",
       "eslint-plugin-jsx-a11y": "^6.1.0",
-      "eslint-plugin-react": "^7.10.0"
+      "eslint-plugin-react": "^7.10.0",
+      "babel-eslint": "^8.2.5"
     }
   }
 
@@ -1301,10 +1299,6 @@ Lockfile:
       define-property "^0.2.5"
       isobject "^3.0.0"
       static-extend "^0.1.1"
-  
-  classnames@^2.2.6:
-    version "2.2.6"
-    resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   
   cli-cursor@^2.1.0:
     version "2.1.0"
@@ -4130,7 +4124,7 @@ Lockfile:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   
-  schema-utils@^0.4.0, schema-utils@^0.4.2, schema-utils@^0.4.5:
+  schema-utils@^0.4.0, schema-utils@^0.4.2:
     version "0.4.5"
     resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.4.5.tgz#21836f0608aac17b78f9e3e24daff14a5ca13a3e"
     dependencies:
@@ -4424,13 +4418,6 @@ Lockfile:
   strip-json-comments@~2.0.1:
     version "2.0.1"
     resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
-  
-  style-loader@^0.21.0:
-    version "0.21.0"
-    resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.21.0.tgz#68c52e5eb2afc9ca92b6274be277ee59aea3a852"
-    dependencies:
-      loader-utils "^1.1.0"
-      schema-utils "^0.4.5"
   
   styled-components@^3.3.3:
     version "3.3.3"
@@ -4968,10 +4955,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.7.0.tgz#0076b9fde6010e01950526a609bc53bc175ef925"
 
 Trace: 
-  Error: This module isn't specified in a manifest.
+  Error: Command "remmove" not found.
       at new MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
-      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:60445:15)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:87307:17
       at Generator.next (<anonymous>)
       at step (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:109:13
-      at <anonymous>
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:23451:28)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:95:12
+      at runCommand (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:87312:22)
+      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:87412:14)

@@ -11,24 +11,22 @@
   "author": "Ilya Daraseliya",
   "license": "ISC",
   "dependencies": {
-    "add": "^2.0.6",
-    "babel-eslint": "^8.2.5",
     "next": "^6.1.1",
     "no-scroll": "^2.1.1",
-    "postcss-loader": "^2.1.6",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-minimalist-portal": "^2.3.1",
     "react-transition-group": "^2.4.0",
-    "styled-components": "^3.3.3",
-    "yarn": "^1.7.0"
+    "styled-components": "^3.3.3"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.5",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.0",
-    "eslint-plugin-react": "^7.10.0"
+    "eslint-plugin-react": "^7.10.0",
+    "postcss-loader": "^2.1.6"
   }
 }
