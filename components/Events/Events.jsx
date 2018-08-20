@@ -154,7 +154,7 @@ class Events extends React.Component {
                     <EventStyled isFirst={i === 0}>
                       <EventSpeakerStyled>
                         <EventSpeakerImageStyled
-                          image={`/static/img/${speaker.firstName.toLowerCase()}.jpg`}
+                          image={`/static/img/${speaker.twitterHandle}.jpg`}
                         />
                         <EventSpeakerNameStyled>
                           {`${speaker.firstName} ${speaker.lastName}`}
@@ -188,7 +188,7 @@ class Events extends React.Component {
                             {'Slides'}
                           </LinkStyled>
                         )}
-                        {photos && (
+                        {Boolean(photos.length) && (
                           <LinkStyled
                             onClick={() => {
                               this.setImageArr(photos);
