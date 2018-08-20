@@ -75,7 +75,7 @@ class Members extends React.Component {
             <MembersContainerStyled>
               {members.map(({ firstName, lastName, twitterHandle }) => (
                 <MemberStyled key={lastName}>
-                  <MemberImageStyled image={`/static/img/${firstName.toLowerCase()}.jpg`} />
+                  <MemberImageStyled image={`/static/img/${twitterHandle}.jpg`} />
                   <MemberNameStyled>
                     {firstName}
                     {' '}
