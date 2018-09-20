@@ -1,100 +1,52 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import { RED, TWITTER_COLOR } from '../../constants/colors';
+import { filteredMembers } from '../../utils';
 import { SectionStyled, SectionTitleStyled } from '../../styles/styles';
+import {
+  MembersContainerStyled,
+  MemberStyled,
+  MemberImageStyled,
+  MemberNameStyled,
+  MemberTwitterStyled,
+} from './styles';
 
-const MembersContainerStyled = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: 700px) {
-    flex-direction: column;
-  }
-`;
-const MemberStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 20px;
-  @media (max-width: 700px) {
-    margin: 0 0 20px 0;
-  }
-`;
-const MemberImageStyled = styled.div`
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background-image: url(${({ image }) => image});
-  background-size: cover;
-  background-position: center;
-  border: 3px solid ${RED};
-  margin-bottom: 10px;
-`;
-const MemberNameStyled = styled.span`
-  font-size: 18px;
-  font-weight: 500;
-`;
-const MemberTwitterStyled = styled.a`
-  color: ${TWITTER_COLOR};
-`;
+const Members = ({ speakers }) => (
+  <SectionStyled>
+    <SectionTitleStyled>
+      {'Members'}
+    </SectionTitleStyled>
+    <MembersContainerStyled>
+      {filteredMembers(speakers).map(({ id, data }) => {
+        const {
+          first_name: firstName,
+          last_name: lastName,
+          twitter_handle: twitterHandle,
+          profile_picture: profilePicture,
+        } = data;
+        return (
+          <MemberStyled key={id}>
+            <MemberImageStyled image={profilePicture.url} />
+            <MemberNameStyled>
+              {firstName[0].text}
+              {' '}
+              {lastName[0].text}
+            </MemberNameStyled>
+            <MemberTwitterStyled
+              href={`https://twitter.com/${twitterHandle[0].text}`}
+              target="_blank"
+            >
+              {`@${twitterHandle[0].text}`}
+            </MemberTwitterStyled>
+          </MemberStyled>
+        );
+      })}
+    </MembersContainerStyled>
+  </SectionStyled>
+);
 
-class Members extends React.Component {
-  state = {
-    loading: true,
-    members: [],
-  };
-
-  componentDidMount = async () => {
-    const fetchedMembers = await fetch('/static/data/members.json');
-    const members = await fetchedMembers.json();
-    this.setState({
-      members: members.data,
-      loading: false,
-    });
-  };
-
-  render = () => {
-    const { loading, members } = this.state;
-    return (
-      <SectionStyled>
-        <SectionTitleStyled>
-          {'Members'}
-        </SectionTitleStyled>
-        {(() => {
-          if (loading) {
-            return (
-              <span>
-                {'Loading...'}
-              </span>
-            );
-          }
-          return (
-            <MembersContainerStyled>
-              {members.map(({ firstName, lastName, twitterHandle }) => (
-                <MemberStyled key={lastName}>
-                  <MemberImageStyled image={`/static/img/${twitterHandle}.jpg`} />
-                  <MemberNameStyled>
-                    {firstName}
-                    {' '}
-                    {lastName}
-                  </MemberNameStyled>
-                  <MemberTwitterStyled
-                    href={`https://twitter.com/${twitterHandle}`}
-                    target="_blank"
-                  >
-                    {`@${twitterHandle}`}
-                  </MemberTwitterStyled>
-                </MemberStyled>
-              ))}
-            </MembersContainerStyled>
-          );
-        })()}
-      </SectionStyled>
-    );
-  };
-}
+Members.propTypes = {
+  speakers: PropTypes.oneOfType([PropTypes.array]).isRequired,
+};
 
 export default Members;
