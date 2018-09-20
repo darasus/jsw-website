@@ -1,6 +1,6 @@
 import styled, { injectGlobal } from 'styled-components';
 
-import { GREY, WHITE } from '../constants/colors';
+import { GREY, WHITE } from '../constants';
 
 export const SectionStyled = styled.section`
   padding-top: 80px;
@@ -9,12 +9,7 @@ export const SectionStyled = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: ${({ grey }) => {
-    if (grey) {
-      return GREY;
-    }
-    return WHITE;
-  }};
+  background-color: ${({ grey }) => (grey ? GREY : WHITE)};
 `;
 export const SectionTitleStyled = styled.span`
   font-family: Fira Code, sans-serif;
@@ -32,7 +27,7 @@ export const ContainerStyled = styled.div`
   max-width: 800px;
 `;
 
-injectGlobal`
+export const injectGlobalStyles = () => injectGlobal`
   body {
     padding: 0;
     margin: 0;

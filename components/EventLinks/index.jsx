@@ -1,32 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { LIGHT_GREY, RED } from '../../constants/colors';
-
-const LinksStyled = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 20px;
-`;
-const LinkStyled = styled.a`
-  display: flex;
-  height: 35px;
-  padding: 0 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  align-items: center;
-  color: ${RED};
-  background-color: ${LIGHT_GREY};
-  cursor: pointer;
-  text-decoration: underline;
-`;
-const LinkIconStyled = styled.img`
-  display: block;
-  height: 17px;
-  margin-right: 10px;
-  opacity: 0.5;
-`;
+import { LinksStyled, LinkStyled, LinkIconStyled } from './styles';
 
 const EventLinks = ({
   meetupLink, slidesLink, eventPictures, setImageArr, handleOpen,

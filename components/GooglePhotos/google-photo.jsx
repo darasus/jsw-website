@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Portal from 'react-minimalist-portal';
 import Transition from 'react-transition-group/Transition';
 import noScroll from 'no-scroll';
+
+import { CLOUDINARY_URL } from '../../constants';
 import { CloseArrow, PrevArrowButton, NextArrowButton } from './arrow';
 
 const keycodes = {
@@ -176,7 +178,7 @@ class GooglePhoto extends Component {
                 {src.map((source, index) => (
                   <img
                     key={index}
-                    src={source.src}
+                    src={`${CLOUDINARY_URL}${source.src}`}
                     alt={source.alt}
                     width={wrapperImageStyle.width}
                     height={wrapperImageStyle.height}

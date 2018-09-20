@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import {
   PURPLE, YELLOW, RED, GREY, GREEN,
-} from '../../constants/colors';
+} from '../../constants';
 
 const IntroStyled = styled.div`
   position: relative;
@@ -61,7 +61,7 @@ const Intro = () => (
     <IntroContentStyled>
       <IntroTextStyled>
         <span style={{ color: PURPLE }}>
-          {'const'}
+const
         </span>
         {' '}
         <span style={{ color: YELLOW }}>

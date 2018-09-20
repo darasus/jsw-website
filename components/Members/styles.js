@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { RED, TWITTER_COLOR } from '../../constants/colors';
+import { RED, TWITTER_COLOR } from '../../constants';
 
 export const MembersContainerStyled = styled.div`
   display: flex;

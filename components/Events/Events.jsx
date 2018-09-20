@@ -1,19 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-import { GREY } from '../../constants/colors';
+import { DividerStyled } from './styles';
 import GooglePhoto from '../GooglePhotos';
 import EventUnit from '../EventUnit';
 import { SectionStyled, SectionTitleStyled, ContainerStyled } from '../../styles/styles';
-
-const DividerStyled = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  color: ${GREY};
-`;
 
 class Events extends React.Component {
   state = {

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
+import { injectGlobalStyles } from '../styles/styles';
 import { Client, Prismic } from '../prismic';
 import Intro from '../components/Intro/Intro';
 import Members from '../components/Members/Members';
@@ -28,6 +29,7 @@ const Index = ({ events, speakers }) => (
 );
 
 Index.getInitialProps = async ({ req }) => {
+  injectGlobalStyles();
   try {
     const events = await Client(req).query(Prismic.Predicates.at('document.type', 'event'));
     const speakers = await Client(req).query(Prismic.Predicates.at('document.type', 'speaker'));
