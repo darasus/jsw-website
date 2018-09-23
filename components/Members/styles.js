@@ -33,7 +33,7 @@ const MemberImage = styled.div`
 `;
 const MemberName = styled.span`
   font-size: 18px;
-  font-weight: 500;
+  font-weight: bold;
 `;
 const MemberTwitter = styled.a`
   color: ${TWITTER_COLOR};

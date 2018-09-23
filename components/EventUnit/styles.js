@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-import { GREY, RED, TWITTER_COLOR } from '../../constants';
+import {
+  GREY, RED, TWITTER_COLOR, DARK_BLUE,
+} from '../../constants';
 
 const Event = styled.div`
   display: flex;
@@ -9,11 +11,20 @@ const Event = styled.div`
   margin: ${({ isFirst }) => (isFirst ? '0 0 20px 0' : '20px 0')};
 `;
 
-const EventName = styled.span`
+const EventName = styled.div`
   font-size: 18px;
   font-weight: 500;
+  margin-bottom: 5px;
   span {
     color: ${GREY};
+  }
+`;
+
+const EventNameLink = styled.a`
+  font-weight: bold;
+  text-decoration: underline;
+  &:visited {
+    color: ${DARK_BLUE};
   }
 `;
 
@@ -25,6 +36,7 @@ const EventSpeaker = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 5px;
 `;
 
 const EventSpeakerImage = styled.div`
@@ -37,7 +49,6 @@ const EventSpeakerImage = styled.div`
   border-radius: 50%;
   border: 2px solid ${RED};
   margin-right: 5px;
-  margin-bottom: 5px;
 `;
 
 const EventSpeakerName = styled.span`
@@ -54,6 +65,7 @@ const EventSpeakerTwitter = styled.a`
 export {
   Event,
   EventName,
+  EventNameLink,
   EventDesc,
   EventSpeaker,
   EventSpeakerImage,

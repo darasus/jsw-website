@@ -33,7 +33,14 @@ const EventUnit = ({
         </S.EventSpeakerTwitter>
       </S.EventSpeaker>
       <S.EventName>
-        {eventTitle[0].text}
+        {meetupLink ? (
+          <S.EventNameLink href={meetupLink.url} target="_blank">
+            {eventTitle[0].text}
+          </S.EventNameLink>
+        ) : (
+          eventTitle[0].text
+        )}
+
         <span>
           {` • ${eventDate}`}
         </span>
