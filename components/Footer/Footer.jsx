@@ -1,22 +1,20 @@
 import React from 'react';
 
-import {
-  FooterStyled, FooterContainerStyled, CopyStyled, GithubLinkStyled,
-} from './styles';
+import * as S from './styles';
 
 const Footer = () => (
-  <FooterStyled>
-    <FooterContainerStyled>
-      <CopyStyled>
+  <S.Footer>
+    <S.FooterContainer>
+      <S.Copy>
         {`${new Date().getFullYear()} © JSW`}
-      </CopyStyled>
-      <GithubLinkStyled href="https://github.com/daraselia/jsw-website" target="_blank">
+      </S.Copy>
+      <S.GithubLink href="https://github.com/daraselia/jsw-website" target="_blank">
         {'Open-sourced on '}
         <img src="/static/img/github.svg" alt="github" />
         {' GitHub'}
-      </GithubLinkStyled>
-    </FooterContainerStyled>
-  </FooterStyled>
+      </S.GithubLink>
+    </S.FooterContainer>
+  </S.Footer>
 );
 
 export default Footer;

@@ -2,7 +2,7 @@ import styled, { injectGlobal } from 'styled-components';
 
 import { GREY, WHITE } from '../constants';
 
-export const SectionStyled = styled.section`
+const Section = styled.section`
   padding-top: 80px;
   width: 100%;
   display: flex;
@@ -11,14 +11,14 @@ export const SectionStyled = styled.section`
   flex-direction: column;
   background-color: ${({ grey }) => (grey ? GREY : WHITE)};
 `;
-export const SectionTitleStyled = styled.span`
+const SectionTitle = styled.span`
   font-family: Fira Code, sans-serif;
   font-weight: bold;
   font-size: 40px;
   margin: 0 0 60px;
   text-align: center;
 `;
-export const ContainerStyled = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,7 +27,7 @@ export const ContainerStyled = styled.div`
   max-width: 800px;
 `;
 
-export const injectGlobalStyles = () => injectGlobal`
+const injectGlobalStyles = () => injectGlobal`
   body {
     padding: 0;
     margin: 0;
@@ -113,3 +113,7 @@ export const injectGlobalStyles = () => injectGlobal`
     transform: translateX(0px);
   }
 `;
+
+export {
+  Section, SectionTitle, Container, injectGlobalStyles,
+};

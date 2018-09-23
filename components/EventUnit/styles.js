@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 import { GREY, RED, TWITTER_COLOR } from '../../constants';
 
-export const EventStyled = styled.div`
+const Event = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
   margin: ${({ isFirst }) => (isFirst ? '0 0 20px 0' : '20px 0')};
 `;
 
-export const EventNameStyled = styled.span`
+const EventName = styled.span`
   font-size: 18px;
   font-weight: 500;
   span {
@@ -17,17 +17,17 @@ export const EventNameStyled = styled.span`
   }
 `;
 
-export const EventDescStyled = styled.span`
+const EventDesc = styled.span`
   color: ${GREY};
 `;
 
-export const EventSpeakerStyled = styled.div`
+const EventSpeaker = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 `;
 
-export const EventSpeakerImageStyled = styled.div`
+const EventSpeakerImage = styled.div`
   flex-shrink: 0;
   width: 30px;
   height: 30px;
@@ -40,13 +40,23 @@ export const EventSpeakerImageStyled = styled.div`
   margin-bottom: 5px;
 `;
 
-export const EventSpeakerNameStyled = styled.span`
+const EventSpeakerName = styled.span`
   margin-right: 5px;
   @media (max-width: 700px) {
     flex-grow: 1;
   }
 `;
 
-export const EventSpeakerTwitterStyled = styled.a`
+const EventSpeakerTwitter = styled.a`
   color: ${TWITTER_COLOR};
 `;
+
+export {
+  Event,
+  EventName,
+  EventDesc,
+  EventSpeaker,
+  EventSpeakerImage,
+  EventSpeakerName,
+  EventSpeakerTwitter,
+};

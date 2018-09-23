@@ -177,7 +177,7 @@ class GooglePhoto extends Component {
               <div style={wrapperImageStyle}>
                 {src.map((source, index) => (
                   <img
-                    key={index}
+                    key={source.src}
                     src={`${CLOUDINARY_URL}${source.src}`}
                     alt={source.alt}
                     width={wrapperImageStyle.width}
@@ -213,65 +213,22 @@ class GooglePhoto extends Component {
 }
 
 GooglePhoto.propTypes = {
-  /**
-   * Control if GooglePhoto is open or not
-   */
   open: PropTypes.bool.isRequired,
-  /**
-   * An array containing valid images
-   */
   src: PropTypes.arrayOf(
     PropTypes.shape({
-      /**
-       * Url of the media
-       */
       src: PropTypes.string.isRequired,
-      /**
-       * Height of the media
-       */
       height: PropTypes.number.isRequired,
-      /**
-       * Width of the media
-       */
       width: PropTypes.number.isRequired,
     }),
   ).isRequired,
-  /**
-   * Index of source to display
-   */
   srcIndex: PropTypes.number.isRequired,
-  /**
-   * Is closable when user press esc key
-   */
   closeOnEsc: PropTypes.bool,
-  /**
-   * Enable left and right arrow navigation
-   */
   keyboardNavigation: PropTypes.bool,
-  /**
-   * The duration of the transition, in milliseconds see [react-transition-group docs](https://reactcommunity.org/react-transition-group/#Transition-prop-timeout)
-   */
   transitionDuration: PropTypes.number,
-  /**
-   * The animation object see [react-transition-group docs](https://reactcommunity.org/react-transition-group/#Transition)
-   */
-  // eslint-disable-next-line
-  transitionStyles: PropTypes.object,
-  /**
-   * Timeout before hidding the actions buttons when mouse do not move (milliseconds)
-   */
+  transitionStyles: PropTypes.oneOfType([PropTypes.object]),
   mouseIdleTimeout: PropTypes.number,
-  /**
-   * Function called when the previous image is requested
-   */
   onClickPrev: PropTypes.func.isRequired,
-  /**
-   * Function called when the next image is requested
-   */
   onClickNext: PropTypes.func.isRequired,
-  /**
-   * Function called when GooglePhoto is requested to be closed
-   */
   onClose: PropTypes.func.isRequired,
 };
 

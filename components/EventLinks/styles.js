@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 import { LIGHT_GREY, RED } from '../../constants';
 
-export const LinksStyled = styled.div`
+const Links = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding-top: 20px;
 `;
-export const LinkStyled = styled.a`
+const Link = styled.a`
   display: flex;
   height: 35px;
   padding: 0 10px;
@@ -19,9 +19,11 @@ export const LinkStyled = styled.a`
   cursor: pointer;
   text-decoration: underline;
 `;
-export const LinkIconStyled = styled.img`
+const LinkIcon = styled.img`
   display: block;
   height: 17px;
   margin-right: 10px;
   opacity: 0.5;
 `;
+
+export { Links, Link, LinkIcon };

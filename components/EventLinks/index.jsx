@@ -1,37 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { LinksStyled, LinkStyled, LinkIconStyled } from './styles';
+import * as S from './styles';
 
 const EventLinks = ({
   meetupLink, slidesLink, eventPictures, setImageArr, handleOpen,
 }) => (
-  <LinksStyled>
+  <S.Links>
     {meetupLink.url && (
-      <LinkStyled href={meetupLink.url} target="_blank">
-        <LinkIconStyled src="/static/img/meetup.svg" />
+      <S.Link href={meetupLink.url} target="_blank">
+        <S.LinkIcon src="/static/img/meetup.svg" />
         {'Meetup'}
-      </LinkStyled>
+      </S.Link>
     )}
     {slidesLink.url && (
-      <LinkStyled href={slidesLink.url} target="_blank">
-        <LinkIconStyled src="/static/img/slides.svg" />
+      <S.Link href={slidesLink.url} target="_blank">
+        <S.LinkIcon src="/static/img/slides.svg" />
         {'Slides'}
-      </LinkStyled>
+      </S.Link>
     )}
     {!!eventPictures.length && (
-      <LinkStyled
+      <S.Link
         onClick={() => {
           setImageArr(eventPictures);
           handleOpen();
         }}
         target="_blank"
       >
-        <LinkIconStyled src="/static/img/instagram.svg" />
+        <S.LinkIcon src="/static/img/instagram.svg" />
         {'Photos'}
-      </LinkStyled>
+      </S.Link>
     )}
-  </LinksStyled>
+  </S.Links>
 );
 
 EventLinks.propTypes = {

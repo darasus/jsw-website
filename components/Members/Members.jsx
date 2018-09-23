@@ -2,21 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { filteredMembers } from '../../utils';
-import { SectionStyled, SectionTitleStyled } from '../../styles/styles';
-import {
-  MembersContainerStyled,
-  MemberStyled,
-  MemberImageStyled,
-  MemberNameStyled,
-  MemberTwitterStyled,
-} from './styles';
+import * as A from '../../styles/styles';
+import * as S from './styles';
 
 const Members = ({ speakers }) => (
-  <SectionStyled>
-    <SectionTitleStyled>
+  <A.Section>
+    <A.SectionTitle>
       {'Members'}
-    </SectionTitleStyled>
-    <MembersContainerStyled>
+    </A.SectionTitle>
+    <S.MembersContainer>
       {filteredMembers(speakers).map(({ id, data }) => {
         const {
           first_name: firstName,
@@ -25,24 +19,21 @@ const Members = ({ speakers }) => (
           profile_picture: profilePicture,
         } = data;
         return (
-          <MemberStyled key={id}>
-            <MemberImageStyled image={profilePicture.url} />
-            <MemberNameStyled>
+          <S.Member key={id}>
+            <S.MemberImage image={profilePicture.url} />
+            <S.MemberName>
               {firstName[0].text}
               {' '}
               {lastName[0].text}
-            </MemberNameStyled>
-            <MemberTwitterStyled
-              href={`https://twitter.com/${twitterHandle[0].text}`}
-              target="_blank"
-            >
+            </S.MemberName>
+            <S.MemberTwitter href={`https://twitter.com/${twitterHandle[0].text}`} target="_blank">
               {`@${twitterHandle[0].text}`}
-            </MemberTwitterStyled>
-          </MemberStyled>
+            </S.MemberTwitter>
+          </S.Member>
         );
       })}
-    </MembersContainerStyled>
-  </SectionStyled>
+    </S.MembersContainer>
+  </A.Section>
 );
 
 Members.propTypes = {

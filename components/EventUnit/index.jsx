@@ -2,15 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import EventLinks from '../EventLinks';
-import {
-  EventStyled,
-  EventSpeakerStyled,
-  EventSpeakerImageStyled,
-  EventSpeakerNameStyled,
-  EventSpeakerTwitterStyled,
-  EventNameStyled,
-  EventDescStyled,
-} from './styles';
+import * as S from './styles';
 
 const EventUnit = ({
   i,
@@ -29,25 +21,25 @@ const EventUnit = ({
   handleOpen,
 }) => (
   <div key={id}>
-    <EventStyled isFirst={i === 0}>
-      <EventSpeakerStyled>
-        <EventSpeakerImageStyled image={profilePicture} />
-        <EventSpeakerNameStyled>
+    <S.Event isFirst={i === 0}>
+      <S.EventSpeaker>
+        <S.EventSpeakerImage image={profilePicture} />
+        <S.EventSpeakerName>
           {`${firstName} ${lastName}`}
-        </EventSpeakerNameStyled>
-        <EventSpeakerTwitterStyled href={`https://twitter.com/${twitterHandle}`} target="_blank">
+        </S.EventSpeakerName>
+        <S.EventSpeakerTwitter href={`https://twitter.com/${twitterHandle}`} target="_blank">
           {`@${twitterHandle}`}
-        </EventSpeakerTwitterStyled>
-      </EventSpeakerStyled>
-      <EventNameStyled>
+        </S.EventSpeakerTwitter>
+      </S.EventSpeaker>
+      <S.EventName>
         {eventTitle[0].text}
         <span>
           {` • ${eventDate}`}
         </span>
-      </EventNameStyled>
-      <EventDescStyled>
+      </S.EventName>
+      <S.EventDesc>
         {eventDescription[0].text}
-      </EventDescStyled>
+      </S.EventDesc>
       <EventLinks
         {...{
           meetupLink,
@@ -57,7 +49,7 @@ const EventUnit = ({
           handleOpen,
         }}
       />
-    </EventStyled>
+    </S.Event>
   </div>
 );
 

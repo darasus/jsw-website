@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 import { DARK_BLUE, GREY } from '../../constants';
 
-export const FooterStyled = styled.div`
+const Footer = styled.div`
   margin-top: 80px;
   padding: 20px 0;
   background-color: ${DARK_BLUE};
 `;
-export const FooterContainerStyled = styled.div`
+const FooterContainer = styled.div`
   display: flex;
   max-width: 800px;
   margin: 0 auto;
@@ -16,11 +16,11 @@ export const FooterContainerStyled = styled.div`
     flex-direction: column;
   }
 `;
-export const CopyStyled = styled.div`
+const Copy = styled.div`
   flex-grow: 1;
   color: ${GREY};
 `;
-export const GithubLinkStyled = styled.a`
+const GithubLink = styled.a`
   display: flex;
   color: ${GREY};
   img {
@@ -29,3 +29,7 @@ export const GithubLinkStyled = styled.a`
     margin: 0 5px;
   }
 `;
+
+export {
+  Footer, FooterContainer, Copy, GithubLink,
+};

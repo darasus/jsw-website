@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { DividerStyled } from './styles';
 import GooglePhoto from '../GooglePhotos';
 import EventUnit from '../EventUnit';
-import { SectionStyled, SectionTitleStyled, ContainerStyled } from '../../styles/styles';
+import * as A from '../../styles/styles';
 
 class Events extends React.Component {
   state = {
@@ -44,11 +43,11 @@ class Events extends React.Component {
     const { events, speakers } = this.props;
     const { galleryOpen, galleryImages, galleryIndex } = this.state;
     return (
-      <SectionStyled>
-        <SectionTitleStyled>
+      <A.Section>
+        <A.SectionTitle>
 Events
-        </SectionTitleStyled>
-        <ContainerStyled>
+        </A.SectionTitle>
+        <A.Container>
           {events.map(
             (
               {
@@ -93,12 +92,11 @@ Events
                       speakers,
                     }}
                   />
-                  {!(events.length - 1 === i) && <DividerStyled />}
                 </React.Fragment>
               );
             },
           )}
-        </ContainerStyled>
+        </A.Container>
         <GooglePhoto
           open={galleryOpen}
           src={galleryImages}
@@ -107,7 +105,7 @@ Events
           onClickNext={this.handleClickNext}
           onClose={this.handleClose}
         />
-      </SectionStyled>
+      </A.Section>
     );
   }
 }
