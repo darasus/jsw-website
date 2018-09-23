@@ -1,31 +1,18 @@
-import PrismicLib, { previewCookie } from 'prismic-javascript';
+import PrismicLib from 'prismic-javascript';
 import PrismicConfig from './prismic-configuration.json';
 
-let frontClient;
+const ACCESS_TOKEN = process.env.PRISMIC_ACCESS_TOKEN;
 
-export const Client = (req = null) => {
-  if (!req && frontClient) {
-    return frontClient;
-  }
-
+const Client = (req = null) => {
   const options = Object.assign(
     {},
     req ? { req } : {},
-    process.env.PRISMIC_ACCESS_TOKEN ? { accessToken: process.env.PRISMIC_ACCESS_TOKEN } : {},
+    ACCESS_TOKEN ? { accessToken: ACCESS_TOKEN } : {},
   );
 
   return PrismicLib.client(PrismicConfig.apiEndpoint, options);
 };
 
-export const Prismic = PrismicLib;
+const Prismic = PrismicLib;
 
-export const PREVIEW_COOKIE = previewCookie;
-
-export const linkResolver = (doc) => {
-  if (doc.type === 'homepage') return '/';
-  if (doc.type === 'products') return '/products';
-  if (doc.type === 'product') return `/products/${doc.uid}`;
-  if (doc.type === 'blog_home') return '/blog';
-  if (doc.type === 'blog_post') return `/blog/${doc.uid}`;
-  return '/';
-};
+export { Client, Prismic };
