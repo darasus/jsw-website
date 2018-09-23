@@ -12,7 +12,7 @@ const MEETUP_COLOR = '#ED1C40';
 const SLIDES_COLOR = '#E4637C';
 const INSTAGRAM_COLOR = '#E4405F';
 
-const CLOUDINARY_URL = 'https://res.cloudinary.com/dkiskcxrh/image/fetch/w_2000,f_auto/';
+const CLOUDINARY_URL = 'https://res.cloudinary.com/dkiskcxrh/image/fetch/';
 
 const socialChannels = [
   {

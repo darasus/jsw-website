@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { CLOUDINARY_URL } from '../../constants';
 import EventLinks from '../EventLinks';
 import * as S from './styles';
 
@@ -23,7 +24,7 @@ const EventUnit = ({
   <div key={id}>
     <S.Event isFirst={i === 0}>
       <S.EventSpeaker>
-        <S.EventSpeakerImage image={profilePicture} />
+        <S.EventSpeakerImage image={`${CLOUDINARY_URL}w_68,f_auto/${profilePicture}`} />
         <S.EventSpeakerName>
           {`${firstName} ${lastName}`}
         </S.EventSpeakerName>

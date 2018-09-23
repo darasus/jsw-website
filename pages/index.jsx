@@ -17,7 +17,6 @@ const Index = ({ events, speakers }) => (
         {'JavaScript Workshops | JSW'}
       </title>
       <link rel="icon" type="image/png" href="/static/img/favicon.png" />
-      <link href="https://unpkg.com/firacode/distr/fira_code.css" rel="stylesheet" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
     <Intro />

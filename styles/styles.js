@@ -12,7 +12,7 @@ const Section = styled.section`
   background-color: ${({ grey }) => (grey ? GREY : WHITE)};
 `;
 const SectionTitle = styled.span`
-  font-family: Fira Code, sans-serif;
+  font-family: 'Courier', 'Andale Mono', 'Monaco', sans-serif;
   font-weight: bold;
   font-size: 40px;
   margin: 0 0 60px;
@@ -31,7 +31,7 @@ const injectGlobalStyles = () => injectGlobal`
   body {
     padding: 0;
     margin: 0;
-    font-family: Fira Code, sans-serif;
+    font-family: 'Courier', 'Andale Mono', 'Monaco', sans-serif;
     color: #292d35;
   }
   .overlay {

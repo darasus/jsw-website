@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { CLOUDINARY_URL } from '../../constants';
 import { filteredAndSortedMembers } from '../../utils';
 import * as A from '../../styles/styles';
 import * as S from './styles';
@@ -20,7 +21,7 @@ const Members = ({ speakers }) => (
         } = data;
         return (
           <S.Member key={id}>
-            <S.MemberImage image={profilePicture.url} />
+            <S.MemberImage image={`${CLOUDINARY_URL}w_200,f_auto/${profilePicture.url}`} />
             <S.MemberName>
               {firstName[0].text}
               {' '}

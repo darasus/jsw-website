@@ -24,7 +24,7 @@ const IntroContent = styled.div`
   text-align: left;
 `;
 const IntroText = styled.div`
-  font-family: Fira Code, sans-serif;
+  font-family: 'Courier', 'Andale Mono', 'Monaco', sans-serif;
   font-size: 24px;
   font-weight: normal;
   margin: 0 0 10px 0;
@@ -33,7 +33,7 @@ const IntroText = styled.div`
   }
 `;
 const CommentText = styled.div`
-  font-family: Fira Code, sans-serif;
+  font-family: 'Courier', 'Andale Mono', 'Monaco', sans-serif;
   font-size: 24px;
   font-weight: normal;
   margin: 0 0 10px 0;

@@ -178,7 +178,7 @@ class GooglePhoto extends Component {
                 {src.map((source, index) => (
                   <img
                     key={source.src}
-                    src={`${CLOUDINARY_URL}${source.src}`}
+                    src={`${CLOUDINARY_URL}w_2000,f_auto/${source.src}`}
                     alt={source.alt}
                     width={wrapperImageStyle.width}
                     height={wrapperImageStyle.height}
