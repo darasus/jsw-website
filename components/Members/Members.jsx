@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { filteredMembers } from '../../utils';
+import { filteredAndSortedMembers } from '../../utils';
 import * as A from '../../styles/styles';
 import * as S from './styles';
 
@@ -11,7 +11,7 @@ const Members = ({ speakers }) => (
       {'Members'}
     </A.SectionTitle>
     <S.MembersContainer>
-      {filteredMembers(speakers).map(({ id, data }) => {
+      {filteredAndSortedMembers(speakers).map(({ id, data }) => {
         const {
           first_name: firstName,
           last_name: lastName,

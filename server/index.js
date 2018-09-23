@@ -1,3 +1,4 @@
+require('dotenv').config();
 const next = require('next');
 const helmet = require('helmet');
 const express = require('express');

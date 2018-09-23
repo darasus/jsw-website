@@ -6,9 +6,9 @@ import { injectGlobalStyles } from '../styles/styles';
 import { Client, Prismic } from '../prismic';
 import Intro from '../components/Intro/Intro';
 import Members from '../components/Members/Members';
-import Events from '../components/Events/Events';
 import Subscribe from '../components/Subscribe/Subscribe';
 import Footer from '../components/Footer/Footer';
+import EventsContainer from '../containers/EventsContainer';
 
 const Index = ({ events, speakers }) => (
   <Fragment>
@@ -22,7 +22,7 @@ const Index = ({ events, speakers }) => (
     </Head>
     <Intro />
     <Members speakers={speakers} />
-    <Events events={events} speakers={speakers} />
+    <EventsContainer events={events} speakers={speakers} />
     <Subscribe />
     <Footer />
   </Fragment>
@@ -36,9 +36,10 @@ Index.getInitialProps = async ({ req }) => {
     return {
       events: events.results,
       speakers: speakers.results,
+      error: {},
     };
   } catch (error) {
-    return { error };
+    return { speakers: [], events: [], error };
   }
 };
 

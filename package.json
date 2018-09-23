@@ -6,13 +6,16 @@
   "scripts": {
     "dev": "node server/index.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server/index.js"
+    "start": "NODE_ENV=production node server/index.js",
+    "deploy": "now -e PRISMIC_ACCESS_TOKEN=@prismic-access-token"
   },
   "author": "Ilya Daraseliya",
   "license": "ISC",
   "dependencies": {
     "cloudinary-react": "^1.0.6",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "fs": "^0.0.1-security",
     "helmet": "^3.13.0",
     "next": "^7.0.0",
     "next-routes": "^1.4.2",
@@ -24,7 +27,8 @@
     "react-dom": "^16.5.2",
     "react-minimalist-portal": "^2.3.1",
     "react-transition-group": "^2.4.0",
-    "styled-components": "^3.4.9"
+    "styled-components": "^3.4.9",
+    "webpack": "^4.19.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.5",

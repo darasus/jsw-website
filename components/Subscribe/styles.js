@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { Container } from '../../styles/styles';
 
-const SubscribeContainer = Container.extend`
+const SubscribeContainer = styled(Container)`
   display: flex;
   flex-direction: row;
   @media (max-width: 700px) {

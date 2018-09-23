@@ -11,7 +11,7 @@ export const Client = (req = null) => {
   const options = Object.assign(
     {},
     req ? { req } : {},
-    PrismicConfig.accessToken ? { accessToken: PrismicConfig.accessToken } : {},
+    process.env.PRISMIC_ACCESS_TOKEN ? { accessToken: process.env.PRISMIC_ACCESS_TOKEN } : {},
   );
 
   return PrismicLib.client(PrismicConfig.apiEndpoint, options);
