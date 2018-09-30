@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { CLOUDINARY_URL } from '../../constants';
 import EventLinks from '../EventLinks';
 import * as S from './styles';
+import { getFormatedDate } from '../../utils';
 
 const EventUnit = ({
   i,
@@ -42,7 +43,7 @@ const EventUnit = ({
         )}
         {' • '}
         <S.EventDate isFuture={new Date(eventDate) - new Date() > 0}>
-          {`${eventDate}`}
+          {`${getFormatedDate(eventDate)}`}
         </S.EventDate>
       </S.EventName>
       <S.EventDesc>
