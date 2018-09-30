@@ -15,17 +15,24 @@ const EventName = styled.div`
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 5px;
-  span {
-    color: ${GREY};
-  }
 `;
 
 const EventNameLink = styled.a`
   font-weight: bold;
   text-decoration: underline;
+  color: ${DARK_BLUE};
   &:visited {
     color: ${DARK_BLUE};
   }
+`;
+
+const EventDate = styled.span`
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 1px 8px;
+  border-radius: 100px;
+  background-color: ${({ isFuture }) => (isFuture ? '#00dc00' : GREY)};
 `;
 
 const EventDesc = styled.span`
@@ -43,7 +50,7 @@ const EventSpeakerImage = styled.div`
   flex-shrink: 0;
   width: 30px;
   height: 30px;
-  background-image: url(${({ image }) => image});
+  background-image: url(${({ image }) => (image || null)});
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -66,6 +73,7 @@ export {
   Event,
   EventName,
   EventNameLink,
+  EventDate,
   EventDesc,
   EventSpeaker,
   EventSpeakerImage,

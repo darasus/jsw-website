@@ -40,10 +40,10 @@ const EventUnit = ({
         ) : (
           eventTitle[0].text
         )}
-
-        <span>
-          {` • ${eventDate}`}
-        </span>
+        {' • '}
+        <S.EventDate isFuture={new Date(eventDate) - new Date() > 0}>
+          {`${eventDate}`}
+        </S.EventDate>
       </S.EventName>
       <S.EventDesc>
         {eventDescription[0].text}

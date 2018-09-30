@@ -10,6 +10,8 @@ import Subscribe from '../components/Subscribe/Subscribe';
 import Footer from '../components/Footer/Footer';
 import EventsContainer from '../containers/EventsContainer';
 
+const sortEvents = arr => arr.sort((a, b) => new Date(b.data.event_date) - new Date(a.data.event_date));
+
 const Index = ({ events, speakers }) => (
   <Fragment>
     <Head>
@@ -33,7 +35,7 @@ Index.getInitialProps = async ({ req }) => {
     const events = await Client(req).query(Prismic.Predicates.at('document.type', 'event'));
     const speakers = await Client(req).query(Prismic.Predicates.at('document.type', 'speaker'));
     return {
-      events: events.results,
+      events: sortEvents(events.results),
       speakers: speakers.results,
       error: {},
     };
