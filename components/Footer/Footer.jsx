@@ -8,7 +8,7 @@ const Footer = () => (
       <S.Copy>
         {`${new Date().getFullYear()} © JSW`}
       </S.Copy>
-      <S.GithubLink href="https://github.com/daraselia/jsw-website" target="_blank">
+      <S.GithubLink href="https://github.com/jsw-wtf/jsw-website" target="_blank">
         {'Open-sourced on '}
         <img src="/static/img/github.svg" alt="github" />
         {' GitHub'}

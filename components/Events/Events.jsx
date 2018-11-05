@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import GooglePhoto from '../GooglePhotos';
 import EventUnit from '../EventUnit';
-import * as A from '../../styles/styles';
+import * as A from '../../styles';
 
 const Events = ({
   events,
@@ -21,7 +21,7 @@ const Events = ({
     <A.SectionTitle>
 Events
     </A.SectionTitle>
-    <A.Container>
+    <A.Wrap>
       {events.map(
         (
           {
@@ -70,7 +70,7 @@ Events
           );
         },
       )}
-    </A.Container>
+    </A.Wrap>
     <GooglePhoto
       open={galleryOpen}
       src={galleryImages}

@@ -1,46 +1,42 @@
 import styled from 'styled-components';
 
-import { GREY } from '../../constants';
+import { GREY, breakpoint } from '../../constants';
 
-const Intro = styled.div`
+const Intro = styled.section`
   position: relative;
   background: #282d35;
   overflow: hidden;
-  @media (min-width: 700px) {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  padding: 100px 0px;
+  @media (min-width: ${breakpoint.large}px) {
     height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  @media (max-width: 700px) {
-    height: auto;
-    padding: 100px 20px;
+    padding: 0;
   }
 `;
+
 const IntroContent = styled.div`
-  width: 80%;
   text-align: left;
 `;
+
 const IntroText = styled.div`
-  font-family: 'Courier', 'Andale Mono', 'Monaco', sans-serif;
-  font-size: 24px;
-  font-weight: normal;
+  font-size: 1.2rem;
   margin: 0 0 10px 0;
-  @media (max-width: 700px) {
-    font-size: 18px;
+  @media (min-width: ${breakpoint.large}px) {
+    font-size: 2rem;
   }
 `;
+
 const CommentText = styled.div`
-  font-family: 'Courier', 'Andale Mono', 'Monaco', sans-serif;
-  font-size: 24px;
-  font-weight: normal;
-  margin: 0 0 10px 0;
-  @media (max-width: 700px) {
-    font-size: 18px;
+  @media (min-width: ${breakpoint.large}px) {
+    font-size: 1.5rem;
   }
 `;
+
 const ScrollDownLabel = styled.span`
   position: absolute;
   bottom: 10px;
@@ -48,8 +44,9 @@ const ScrollDownLabel = styled.span`
   left: 0;
   color: ${GREY};
   text-align: center;
-  @media (max-width: 700px) {
-    display: none;
+  display: none;
+  @media (min-width: ${breakpoint.large}px) {
+    display: block;
   }
 `;
 

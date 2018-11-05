@@ -14,9 +14,6 @@ export default class MyCustomDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <title>
-            {'JSW'}
-          </title>
           {this.props.styleTags}
         </Head>
         <body>

@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-import { DARK_BLUE, GREY } from '../../constants';
+import { DARK_BLUE, GREY, breakpoint } from '../../constants';
 
 const Footer = styled.div`
-  margin-top: 80px;
   padding: 20px 0;
   background-color: ${DARK_BLUE};
 `;
@@ -11,7 +10,7 @@ const FooterContainer = styled.div`
   display: flex;
   max-width: 800px;
   margin: 0 auto;
-  @media (max-width: 700px) {
+  @media (max-width: ${breakpoint.large}px) {
     align-items: center;
     flex-direction: column;
   }

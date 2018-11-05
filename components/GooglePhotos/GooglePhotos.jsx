@@ -6,6 +6,7 @@ import noScroll from 'no-scroll';
 
 import { CLOUDINARY_URL } from '../../constants';
 import { CloseArrow, PrevArrowButton, NextArrowButton } from './arrow';
+import * as S from './styles';
 
 const keycodes = {
   esc: 27,
@@ -13,7 +14,7 @@ const keycodes = {
   right: 39,
 };
 
-class GooglePhoto extends Component {
+class GooglePhotos extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -167,8 +168,7 @@ class GooglePhoto extends Component {
       <Portal>
         <Transition in={open} timeout={transitionDuration} appear onExited={this.handleExited}>
           {state => (
-            <div
-              className="overlay"
+            <S.Overlay
               style={{
                 ...transitionStyles.default,
                 ...transitionStyles[state],
@@ -176,35 +176,35 @@ class GooglePhoto extends Component {
             >
               <div style={wrapperImageStyle}>
                 {src.map((source, index) => (
-                  <img
+                  <S.Image
+                    isOpen={index === srcIndex}
                     key={source.src}
                     src={`${CLOUDINARY_URL}w_2000,f_auto/${source.src}`}
                     alt={source.alt}
                     width={wrapperImageStyle.width}
                     height={wrapperImageStyle.height}
-                    className={index === srcIndex ? 'image imageOpen' : 'image'}
                   />
                 ))}
               </div>
               {srcIndex !== 0 && (
-                <button type="button" className="column leftColumn" onClick={this.handleClickPrev}>
+                <S.Button leftColumn type="button" onClick={this.handleClickPrev}>
                   <PrevArrowButton
-                    className={`arrowButton arrowButtonLeft ${mouseIdle && 'arrowButtonHide'}`}
+                    mouseIdle={mouseIdle}
                   />
-                </button>
+                </S.Button>
               )}
               {src[srcIndex + 1] && (
-                <button type="button" className="column rightColumn" onClick={this.handleClickNext}>
+                <S.Button rightColumn type="button" onClick={this.handleClickNext}>
                   <NextArrowButton
-                    className={`arrowButton arrowButtonRight ${mouseIdle && 'arrowButtonHide'}`}
+                    mouseIdle={mouseIdle}
                   />
-                </button>
+                </S.Button>
               )}
               <CloseArrow
-                className={`arrowButtonReturn ${mouseIdle && 'arrowButtonHide'}`}
+                mouseIdle={mouseIdle}
                 onClick={this.handleClickCloseArrow}
               />
-            </div>
+            </S.Overlay>
           )}
         </Transition>
       </Portal>
@@ -212,7 +212,7 @@ class GooglePhoto extends Component {
   }
 }
 
-GooglePhoto.propTypes = {
+GooglePhotos.propTypes = {
   open: PropTypes.bool.isRequired,
   src: PropTypes.arrayOf(
     PropTypes.shape({
@@ -232,7 +232,7 @@ GooglePhoto.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-GooglePhoto.defaultProps = {
+GooglePhotos.defaultProps = {
   closeOnEsc: true,
   keyboardNavigation: true,
   mouseIdleTimeout: 5000,
@@ -248,4 +248,4 @@ GooglePhoto.defaultProps = {
   },
 };
 
-export default GooglePhoto;
+export default GooglePhotos;

@@ -1,3 +1,3 @@
-import GooglePhoto from './google-photo';
+import GooglePhoto from './GooglePhotos';
 
 export default GooglePhoto;

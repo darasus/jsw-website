@@ -16,16 +16,30 @@ const CLOUDINARY_URL = 'https://res.cloudinary.com/dkiskcxrh/image/fetch/';
 
 const socialChannels = [
   {
-    name: 'Meetup',
+    name: 'email',
+    color: '#D14836',
+    link: 'mailto:hi@jsw.wtf',
+  },
+  {
+    name: 'telegram',
+    color: '#2CA5E0',
+    link: 'https://t.me/jsw_wtf',
+  },
+  {
+    name: 'meetup',
     color: '#ED1C40',
     link: 'https://www.meetup.com/javascript-workshops-amsterdam/',
   },
   {
-    name: 'Slack',
+    name: 'slack',
     color: '#56B68B',
     link: 'https://bit.ly/2xf9Vfc',
   },
 ];
+
+const breakpoint = {
+  large: 800,
+};
 
 export {
   PURPLE,
@@ -42,4 +56,5 @@ export {
   INSTAGRAM_COLOR,
   CLOUDINARY_URL,
   socialChannels,
+  breakpoint,
 };

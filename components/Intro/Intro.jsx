@@ -3,11 +3,12 @@ import React from 'react';
 import {
   PURPLE, YELLOW, RED, GREY, GREEN,
 } from '../../constants';
+import * as A from '../../styles';
 import * as S from './styles';
 
 const Intro = () => (
   <S.Intro>
-    <S.IntroContent>
+    <A.Wrap>
       <S.IntroText>
         <span style={{ color: PURPLE }}>
 const
@@ -30,17 +31,13 @@ w
       </S.IntroText>
       <S.CommentText>
         <span style={{ color: GREY }}>
-          {'//'}
-        </span>
-        {' '}
-        <span style={{ color: GREY }}>
-          {'A series of mini-workshops about JavaScript and everything related'}
+          {'// A series of mini-workshops about JavaScript and everything related'}
         </span>
       </S.CommentText>
       <S.ScrollDownLabel>
         {'Scroll down'}
       </S.ScrollDownLabel>
-    </S.IntroContent>
+    </A.Wrap>
   </S.Intro>
 );
 
