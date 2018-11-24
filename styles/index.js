@@ -37,16 +37,6 @@ const SectionTitle = styled.h2`
   }
 `;
 
-const GlobalStyles = createGlobalStyle`
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Courier', 'Andale Mono', 'Monaco', sans-serif;
-    font-size: 1rem;
-    color: #292d35;
-  }
-`;
-
 export {
-  Section, SectionTitle, Wrap, GlobalStyles,
+  Section, SectionTitle, Wrap,
 };

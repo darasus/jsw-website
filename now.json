@@ -1,3 +1,11 @@
 {
-  "alias": ["jsw.wtf", "www.jsw.wtf"]
+  "version": 2,
+  "alias": ["jsw.wtf", "www.jsw.wtf"],
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@now/next",
+      "config": { "maxLambdaSize": "50mb" }
+    }
+  ]
 }
