@@ -13,25 +13,16 @@
   "author": "Ilya Daraseliya",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "add": "^2.0.6",
-    "cloudinary-react": "^1.0.6",
-    "dotenv": "^6.0.0",
-    "express": "^4.16.3",
     "helmet": "^3.13.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "^7.0.2",
-    "next-routes": "^1.4.2",
     "no-scroll": "^2.1.1",
-    "prismic-javascript": "^1.5.0",
-    "prismic-reactjs": "^0.3.1",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-minimalist-portal": "^2.3.1",
     "react-transition-group": "^2.4.0",
-    "styled-components": "^4.0.3",
-    "yarn": "^1.12.3"
+    "styled-components": "^4.0.3"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.5",
