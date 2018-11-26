@@ -34,9 +34,7 @@ const EventUnit = ({
                 {`${getFormatedDate(eventDate)}`}
               </S.EventDate>
               <div>
-                <S.EventSpeakerName>
-                  {`${firstName} ${lastName}`}
-                </S.EventSpeakerName>
+                <S.EventSpeakerName>{`${firstName} ${lastName}`}</S.EventSpeakerName>
                 {isLarge ? (
                   <S.EventSpeakerTwitter
                     href={`https://twitter.com/${twitterHandle}`}
@@ -57,9 +55,7 @@ const EventUnit = ({
               eventTitle[0].text
             )}
           </S.EventName>
-          <S.EventDesc>
-            {eventDescription[0].text}
-          </S.EventDesc>
+          <S.EventDesc>{eventDescription[0].text}</S.EventDesc>
           <EventLinks
             {...{
               meetupLink,

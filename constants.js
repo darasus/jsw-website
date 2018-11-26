@@ -41,6 +41,9 @@ const breakpoint = {
   large: 800,
 };
 
+const ENDPOINT_EVENTS = 'https://javascript-workshops.prismic.io/api/v2/documents/search?ref=W_m5sBEAADEAY9u_&q=%5B%5Bat(document.type%2C+%22event%22)%5D%5D&format=json';
+const ENDPOINT_SPEAKERS = 'https://javascript-workshops.prismic.io/api/v2/documents/search?ref=W_m5sBEAADEAY9u_&q=%5B%5Bat(document.type%2C+%22speaker%22)%5D%5D&format=json';
+
 export {
   PURPLE,
   YELLOW,
@@ -57,4 +60,6 @@ export {
   CLOUDINARY_URL,
   socialChannels,
   breakpoint,
+  ENDPOINT_EVENTS,
+  ENDPOINT_SPEAKERS,
 };

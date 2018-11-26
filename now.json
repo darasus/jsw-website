@@ -1,11 +1,6 @@
 {
+  "name": "jsw",
   "version": 2,
   "alias": ["jsw.wtf", "www.jsw.wtf"],
-  "builds": [
-    {
-      "src": "next.config.js",
-      "use": "@now/next",
-      "config": { "maxLambdaSize": "50mb" }
-    }
-  ]
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
 }

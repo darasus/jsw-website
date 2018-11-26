@@ -18,9 +18,7 @@ const Events = ({
   handleOpen,
 }) => (
   <A.Section>
-    <A.SectionTitle>
-Events
-    </A.SectionTitle>
+    <A.SectionTitle>Events</A.SectionTitle>
     <A.Wrap>
       {events.map(
         (

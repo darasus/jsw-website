@@ -21,4 +21,8 @@ const getFormatedDate = (date) => {
   return `${newDate.getDate()} ${months[newDate.getMonth()]} ${newDate.getFullYear()}`;
 };
 
-export { sortNumber, filteredAndSortedMembers, getFormatedDate };
+const sortEvents = arr => arr.sort((a, b) => new Date(b.data.event_date) - new Date(a.data.event_date));
+
+export {
+  sortNumber, filteredAndSortedMembers, getFormatedDate, sortEvents,
+};

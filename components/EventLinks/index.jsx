@@ -9,13 +9,13 @@ const EventLinks = ({
   <S.Links>
     {meetupLink.url && (
       <S.Link href={meetupLink.url} target="_blank">
-        <S.LinkIcon src="/static/img/meetup.svg" />
+        <S.LinkIcon src="/static/meetup.svg" />
         {'Meetup'}
       </S.Link>
     )}
     {slidesLink.url && (
       <S.Link href={slidesLink.url} target="_blank">
-        <S.LinkIcon src="/static/img/slides.svg" />
+        <S.LinkIcon src="/static/slides.svg" />
         {'Slides'}
       </S.Link>
     )}
@@ -27,7 +27,7 @@ const EventLinks = ({
         }}
         target="_blank"
       >
-        <S.LinkIcon src="/static/img/instagram.svg" />
+        <S.LinkIcon src="/static/instagram.svg" />
         {'Photos'}
       </S.Link>
     )}

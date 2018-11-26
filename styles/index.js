@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 import { WHITE, breakpoint } from '../constants';
 
@@ -37,6 +37,4 @@ const SectionTitle = styled.h2`
   }
 `;
 
-export {
-  Section, SectionTitle, Wrap,
-};
+export { Section, SectionTitle, Wrap };
