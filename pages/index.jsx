@@ -30,6 +30,7 @@ class Index extends Component {
 
   render() {
     const { speakers, events } = this.props;
+
     return (
       <Fragment>
         <Head>
