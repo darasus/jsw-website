@@ -15,7 +15,7 @@
   "dependencies": {
     "helmet": "^3.13.0",
     "isomorphic-fetch": "^2.2.1",
-    "next": "^7.0.2",
+    "next": "^7.0.3",
     "no-scroll": "^2.1.1",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
