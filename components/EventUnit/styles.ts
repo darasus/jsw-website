@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 import {
-  GREY, RED, TWITTER_COLOR, DARK_BLUE, breakpoint,
+  breakpoint,
+  DARK_BLUE,
+  GREY,
+  TWITTER_COLOR,
+  RED,
 } from '../../constants';
 
-const Event = styled.div`
+const Event = styled.div<{ isFirst: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -43,7 +47,7 @@ const EventNameLink = styled.a`
   }
 `;
 
-const EventDate = styled.span`
+const EventDate = styled.span<{ isFuture: boolean }>`
   color: #fff;
   font-size: 0.7rem;
   font-weight: bold;
@@ -64,7 +68,7 @@ const EventSpeaker = styled.div`
   margin-bottom: 5px;
 `;
 
-const EventSpeakerImage = styled.div`
+const EventSpeakerImage = styled.div<{ image: string }>`
   flex-shrink: 0;
   width: 60px;
   height: 60px;

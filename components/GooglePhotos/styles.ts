@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Overlay = styled.div`
+export const Overlay = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -10,21 +10,25 @@ const Overlay = styled.div`
   overflow: hidden;
 `;
 
-const Image = styled.img`
+export const Image = styled.img<{ isOpen: boolean }>`
   position: absolute;
   visibility: hidden;
   opacity: 0;
   transform: translateX(50px);
   transition: opacity 500ms ease, transform 500ms ease;
-  ${({ isOpen }) => isOpen
-    && `
+  ${({ isOpen }) =>
+    isOpen &&
+    `
       visibility: initial;
       opacity: 1;
       transform: translateX(0px);
     `};
 `;
 
-const Button = styled.button`
+export const Button = styled.button<{
+  leftColumn?: boolean;
+  rightColumn?: boolean;
+}>`
   position: absolute;
   width: 30%;
   height: 100%;
@@ -38,17 +42,23 @@ const Button = styled.button`
   &:hover {
     opacity: 1;
   }
-  ${({ leftColumn }) => leftColumn
-    && `
+  ${({ leftColumn }) =>
+    leftColumn &&
+    `
     left: 0;
   `};
-  ${({ rightColumn }) => rightColumn
-    && `
+  ${({ rightColumn }) =>
+    rightColumn &&
+    `
     right: 0;
   `};
 `;
 
-const Arrow = styled.div`
+export const Arrow = styled.div<{
+  isLeft?: boolean;
+  isRight?: boolean;
+  mouseIdle?: boolean;
+}>`
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 28px;
   position: absolute;
@@ -66,7 +76,7 @@ const Arrow = styled.div`
   ${({ mouseIdle }) => mouseIdle && 'opacity: 0;'};
 `;
 
-const Close = styled.div`
+export const Close = styled.div<{ mouseIdle: boolean }>`
   height: 48px;
   width: 48px;
   position: absolute;
@@ -85,7 +95,3 @@ const Close = styled.div`
     height: 35px;
   }
 `;
-
-export {
-  Overlay, Image, Button, Arrow, Close,
-};

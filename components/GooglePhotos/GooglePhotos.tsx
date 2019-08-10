@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, CSSProperties } from 'react';
 import Portal from 'react-minimalist-portal';
 import Transition from 'react-transition-group/Transition';
 import noScroll from 'no-scroll';
 
 import { CLOUDINARY_URL } from '../../constants';
 import { CloseArrow, PrevArrowButton, NextArrowButton } from './arrow';
-import * as S from './styles';
+import { Overlay, Button, Image } from './styles';
 
 const keycodes = {
   esc: 27,
@@ -14,8 +13,10 @@ const keycodes = {
   right: 39,
 };
 
-class GooglePhotos extends Component {
-  constructor(props) {
+export class GooglePhotos extends Component<any, any> {
+  timeoutMouseIdle: any;
+
+  constructor(props: any) {
     super(props);
     this.state = {
       width: typeof window !== 'undefined' ? window.innerWidth : 0,
@@ -32,7 +33,7 @@ class GooglePhotos extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: any) {
     const { open } = this.props;
     if (!open && nextProps.open) {
       this.handleOpen();
@@ -53,14 +54,20 @@ class GooglePhotos extends Component {
   handleOpen = () => {
     document.addEventListener('keydown', this.handleKeydown);
     window.addEventListener('resize', this.handleWindowResize);
-    document.querySelector('*').addEventListener('mousemove', this.handleMousemove);
+    (document.querySelector('*') as any).addEventListener(
+      'mousemove',
+      this.handleMousemove,
+    );
     noScroll.on();
   };
 
   handleClose = () => {
     document.removeEventListener('keydown', this.handleKeydown);
     window.removeEventListener('resize', this.handleWindowResize);
-    document.querySelector('*').removeEventListener('mousemove', this.handleMousemove);
+    (document.querySelector('*') as any).removeEventListener(
+      'mousemove',
+      this.handleMousemove,
+    );
     noScroll.off();
   };
 
@@ -68,7 +75,7 @@ class GooglePhotos extends Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   };
 
-  handleKeydown = (e) => {
+  handleKeydown = (e: any) => {
     const { keyboardNavigation, closeOnEsc, onClose } = this.props;
     if (e.keyCode === keycodes.left && keyboardNavigation) {
       this.handleClickPrev();
@@ -118,17 +125,32 @@ class GooglePhotos extends Component {
 
   render() {
     const {
-      open, src, srcIndex, transitionDuration, transitionStyles,
+      open,
+      src,
+      srcIndex,
+      transitionDuration,
+      transitionStyles,
     } = this.props;
-    const {
-      width, height, mouseIdle, showPortal,
-    } = this.state;
+    const { width, height, mouseIdle, showPortal } = this.state;
     const image = src[srcIndex];
     const wrapperImageStyle = {
       position: 'absolute',
       overflow: 'hidden',
       userSelect: 'none',
-    };
+      left: 0,
+      height: 0,
+      width: 0,
+      top: 0,
+    } as Pick<
+      CSSProperties,
+      | 'position'
+      | 'overflow'
+      | 'userSelect'
+      | 'left'
+      | 'height'
+      | 'width'
+      | 'top'
+    >;
     let imageWidth = image.width;
     let imageHeight = image.height;
     // Adjust image ratio max with window size
@@ -166,17 +188,20 @@ class GooglePhotos extends Component {
 
     return (
       <Portal>
-        <Transition in={open} timeout={transitionDuration} appear onExited={this.handleExited}>
-          {state => (
-            <S.Overlay
+        <Transition
+          in={open}
+          timeout={transitionDuration}
+          appear
+          onExited={this.handleExited}>
+          {(state: any) => (
+            <Overlay
               style={{
                 ...transitionStyles.default,
                 ...transitionStyles[state],
-              }}
-            >
+              }}>
               <div style={wrapperImageStyle}>
-                {src.map((source, index) => (
-                  <S.Image
+                {src.map((source: any, index: number) => (
+                  <Image
                     isOpen={index === srcIndex}
                     key={source.src}
                     src={`${CLOUDINARY_URL}w_2000,f_auto/${source.src}`}
@@ -187,65 +212,26 @@ class GooglePhotos extends Component {
                 ))}
               </div>
               {srcIndex !== 0 && (
-                <S.Button leftColumn type="button" onClick={this.handleClickPrev}>
-                  <PrevArrowButton
-                    mouseIdle={mouseIdle}
-                  />
-                </S.Button>
+                <Button leftColumn type="button" onClick={this.handleClickPrev}>
+                  <PrevArrowButton mouseIdle={mouseIdle} />
+                </Button>
               )}
               {src[srcIndex + 1] && (
-                <S.Button rightColumn type="button" onClick={this.handleClickNext}>
-                  <NextArrowButton
-                    mouseIdle={mouseIdle}
-                  />
-                </S.Button>
+                <Button
+                  rightColumn
+                  type="button"
+                  onClick={this.handleClickNext}>
+                  <NextArrowButton mouseIdle={mouseIdle} />
+                </Button>
               )}
               <CloseArrow
                 mouseIdle={mouseIdle}
                 onClick={this.handleClickCloseArrow}
               />
-            </S.Overlay>
+            </Overlay>
           )}
         </Transition>
       </Portal>
     );
   }
 }
-
-GooglePhotos.propTypes = {
-  open: PropTypes.bool.isRequired,
-  src: PropTypes.arrayOf(
-    PropTypes.shape({
-      src: PropTypes.string.isRequired,
-      height: PropTypes.number.isRequired,
-      width: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
-  srcIndex: PropTypes.number.isRequired,
-  closeOnEsc: PropTypes.bool,
-  keyboardNavigation: PropTypes.bool,
-  transitionDuration: PropTypes.number,
-  transitionStyles: PropTypes.oneOfType([PropTypes.object]),
-  mouseIdleTimeout: PropTypes.number,
-  onClickPrev: PropTypes.func.isRequired,
-  onClickNext: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired,
-};
-
-GooglePhotos.defaultProps = {
-  closeOnEsc: true,
-  keyboardNavigation: true,
-  mouseIdleTimeout: 5000,
-  transitionDuration: 200,
-  transitionStyles: {
-    default: {
-      transition: 'opacity 200ms ease-in-out',
-      opacity: 0,
-    },
-    entering: { opacity: 0 },
-    entered: { opacity: 1 },
-    exiting: { opacity: 0 },
-  },
-};
-
-export default GooglePhotos;

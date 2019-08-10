@@ -1,0 +1,1 @@
+export { GooglePhotos } from './GooglePhotos';

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import * as A from '../../styles';
+import { Section, SectionTitle, Wrap } from '../../styles';
 import * as S from './styles';
 import { socialChannels, LIGHT_GREY } from '../../constants';
 
 const Subscribe = () => (
-  <A.Section paddingBottom="80" color={LIGHT_GREY}>
-    <A.SectionTitle>Get in touch</A.SectionTitle>
-    <A.Wrap>
+  <Section paddingBottom={80} color={LIGHT_GREY}>
+    <SectionTitle>Get in touch</SectionTitle>
+    <Wrap>
       <S.Channels>
         {socialChannels.map(({ name, color, link }) => (
           <S.Channel key={name} href={link} target="_blank">
@@ -18,8 +18,8 @@ const Subscribe = () => (
           </S.Channel>
         ))}
       </S.Channels>
-    </A.Wrap>
-  </A.Section>
+    </Wrap>
+  </Section>
 );
 
 export default Subscribe;
