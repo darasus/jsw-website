@@ -1,6 +1,0 @@
-{
-  "name": "jsw",
-  "version": 2,
-  "alias": ["jsw.wtf", "www.jsw.wtf"],
-  "builds": [{ "src": "package.json", "use": "@now/next" }]
-}

@@ -13,13 +13,11 @@
   "author": "Ilya Daraseliya",
   "license": "ISC",
   "dependencies": {
-    "helmet": "^3.13.0",
-    "isomorphic-fetch": "^2.2.1",
-    "next": "^9.2.1",
+    "isomorphic-fetch": "^3.0.0",
+    "next": "^12.0.10",
     "no-scroll": "^2.1.1",
-    "prop-types": "^15.6.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-minimalist-portal": "^2.3.1",
     "react-transition-group": "^2.4.0",
     "styled-components": "^4.0.3"
