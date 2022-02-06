@@ -1,15 +1,15 @@
-import React, { Fragment, Component } from 'react';
-import Head from 'next/head';
-import PropTypes from 'prop-types';
-import fetch from 'isomorphic-fetch';
+import React, { Fragment, Component } from "react";
+import Head from "next/head";
+import PropTypes from "prop-types";
+import fetch from "isomorphic-fetch";
 
-import Intro from '../components/Intro/Intro';
-import Members from '../components/Members/Members';
-import Subscribe from '../components/Subscribe/Subscribe';
-import Footer from '../components/Footer/Footer';
-import EventsContainer from '../containers/EventsContainer';
-import { sortEvents } from '../utils';
-import { ENDPOINT_EVENTS, ENDPOINT_SPEAKERS } from '../constants';
+import Intro from "../components/Intro/Intro";
+import Members from "../components/Members/Members";
+import Subscribe from "../components/Subscribe/Subscribe";
+import Footer from "../components/Footer/Footer";
+import EventsContainer from "../containers/EventsContainer";
+import { sortEvents } from "../utils";
+import { ENDPOINT_EVENTS, ENDPOINT_SPEAKERS } from "../constants";
 
 class Index extends Component {
   static async getInitialProps() {
@@ -43,7 +43,7 @@ class Index extends Component {
             body {
               padding: 0;
               margin: 0;
-              font-family: 'Courier', 'Andale Mono', 'Monaco', sans-serif;
+              font-family: "Courier", "Andale Mono", "Monaco", sans-serif;
               font-size: 1rem;
               color: #292d35;
             }
